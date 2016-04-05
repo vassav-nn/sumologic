@@ -1,0 +1,25 @@
+{
+  "name": "vassav-sumologic",
+  "version": "0.1.0"
+  "author": "vassav",
+  "license": "Free",
+  "summary": "Install and configure sumologic collector via JSON",
+  "source": "https://github.com/vassav-nn/sumologic",
+  "project_page": "https://github.com/vassav-nn/sumologic",
+  "issues_url": "https://github.com/vassav-nn/sumologic/issues",
+  "tags": ["sumologic", "centos", "hiera"],
+  "description": "Install and configure sumologic collector via JSON",
+  "operatingsystem_support": [
+    {
+      "operatingsystem": "CentOS",
+      "operatingsystemrelease": [
+        "5",
+        "6",
+        "7"
+      ]
+    }
+  ],
+  "dependencies": [
+    {"version_requirement":">= 1.0.0","name":"puppetlabs/stdlib"}
+  ]
+}

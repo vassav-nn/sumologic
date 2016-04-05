@@ -1,0 +1,82 @@
+{
+  "api.version":"v1",
+  "sources":[{
+    "name":"<%= environment %>.os.audit",
+    "category":"os.audit",
+    "hostName":"<%= fqdn %>",
+    "automaticDateParsing":true,
+    "multilineProcessingEnabled":false,
+    "useAutolineMatching":false,
+    "contentType":"Linux",
+    "forceTimeZone":false,
+    "timeZone":"Etc/UTC",
+    "defaultDateFormat": "yyy-MMM-dd HH:mm:ss.SSS ZZZZ",
+    "pathExpression":"/var/log/audit/*.log*",
+    "sourceType":"LocalFile"
+  },{
+    "name":"<%= environment %>.os.secure",
+    "category":"os.secure",
+    "hostName":"<%= fqdn %>",
+    "automaticDateParsing":true,
+    "multilineProcessingEnabled":false,
+    "useAutolineMatching":false,
+    "contentType":"Linux",
+    "forceTimeZone":false,
+    "timeZone":"Etc/UTC",
+    "defaultDateFormat": "yyy-MMM-dd HH:mm:ss.SSS ZZZZ",
+    "pathExpression":"/var/log/secure*",
+    "sourceType":"LocalFile"
+  },{
+    "name":"<%= environment %>.os.msgs",
+    "category":"os.msgs",
+    "hostName":"<%= fqdn %>",
+    "automaticDateParsing":true,
+    "multilineProcessingEnabled":false,
+    "useAutolineMatching":true,
+    "contentType":"Linux",
+    "forceTimeZone":false,
+    "timeZone":"Etc/UTC",
+    "defaultDateFormat": "yyy-MMM-dd HH:mm:ss.SSS ZZZZ",
+    "pathExpression":"/var/log/messages*",
+    "sourceType":"LocalFile"
+  },{
+    "name":"<%= environment %>.app.httpjira",
+    "category":"app.httpjira",
+    "hostName":"<%= fqdn %>",
+    "automaticDateParsing":true,
+    "multilineProcessingEnabled":true,
+    "useAutolineMatching":true,
+    "contentType":"Linux",
+    "forceTimeZone":false,
+    "timeZone":"Etc/UTC",
+    "defaultDateFormat": "yyy-MMM-dd HH:mm:ss.SSS ZZZZ",
+    "pathExpression":"/var/log/httpd/jira.access_ssl.log*",
+    "sourceType":"LocalFile"
+  },{
+    "name":"<%= environment %>.app.atlassianjira",
+    "category":"app.atlassianjira",
+    "hostName":"<%= fqdn %>",
+    "automaticDateParsing":true,
+    "multilineProcessingEnabled":true,
+    "useAutolineMatching":true,
+    "contentType":"Linux",
+    "forceTimeZone":false,
+    "timeZone":"Etc/UTC",
+    "defaultDateFormat": "yyy-MMM-dd HH:mm:ss.SSS ZZZZ",
+    "pathExpression":"/opt/atlassian/jira/logs/access_log.*",
+    "sourceType":"LocalFile"
+  },{
+    "name":"<%= environment %>.app.httpconfluence",
+    "category":"app.httpconfluence",
+    "hostName":"<%= fqdn %>",
+    "automaticDateParsing":true,
+    "multilineProcessingEnabled":true,
+    "useAutolineMatching":true,
+    "contentType":"Linux",
+    "forceTimeZone":false,
+    "timeZone":"Etc/UTC",
+    "defaultDateFormat": "yyy-MMM-dd HH:mm:ss.SSS ZZZZ",
+    "pathExpression":"/var/log/httpd/confluence.access_ssl.log*",
+    "sourceType":"LocalFile"
+  }]
+}

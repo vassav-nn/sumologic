@@ -1,0 +1,56 @@
+{
+  "api.version":"v1",
+  "sources":[{
+    "name":"<%= environment %>.os.audit",
+    "category":"linux_logs",
+    "hostName":"<%= fqdn %>",
+    "automaticDateParsing":true,
+    "multilineProcessingEnabled":false,
+    "useAutolineMatching":false,
+    "contentType":"Linux",
+    "forceTimeZone":false,
+    "timeZone":"Etc/UTC",
+    "defaultDateFormat": "yyy-MMM-dd HH:mm:ss.SSS ZZZZ",
+    "pathExpression":"/var/log/audit/*.log*",
+    "sourceType":"LocalFile"
+  },{
+    "name":"<%= environment %>.os.secure",
+    "category":"linux_logs",
+    "hostName":"<%= fqdn %>",
+    "automaticDateParsing":true,
+    "multilineProcessingEnabled":false,
+    "useAutolineMatching":false,
+    "contentType":"Linux",
+    "forceTimeZone":false,
+    "timeZone":"Etc/UTC",
+    "defaultDateFormat": "yyy-MMM-dd HH:mm:ss.SSS ZZZZ",
+    "pathExpression":"/var/log/secure*",
+    "sourceType":"LocalFile"
+  },{
+    "name":"<%= environment %>.os.msgs",
+    "category":"linux_logs",
+    "hostName":"<%= fqdn %>",
+    "automaticDateParsing":true,
+    "multilineProcessingEnabled":false,
+    "useAutolineMatching":true,
+    "contentType":"Linux",
+    "forceTimeZone":false,
+    "timeZone":"Etc/UTC",
+    "defaultDateFormat": "yyy-MMM-dd HH:mm:ss.SSS ZZZZ",
+    "pathExpression":"/var/log/messages*",
+    "sourceType":"LocalFile"
+  },{
+    "name":"<%= environment %>.app.mongo",
+    "category":"linux_logs",
+    "hostName":"<%= fqdn %>",
+    "automaticDateParsing":true,
+    "multilineProcessingEnabled":false,
+    "useAutolineMatching":false,
+    "contentType":"Linux",
+    "forceTimeZone":false,
+    "timeZone":"Etc/UTC",
+    "defaultDateFormat": "yyy-MMM-dd HH:mm:ss.SSS ZZZZ",
+    "pathExpression":"/var/log/mongodb/*.log*",
+    "sourceType":"LocalFile"
+  }]
+}

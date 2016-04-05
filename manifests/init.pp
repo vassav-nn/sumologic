@@ -1,0 +1,4 @@
+# Class: sumologic
+
+class sumologic {
+}
