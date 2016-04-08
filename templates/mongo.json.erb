@@ -1,9 +1,9 @@
 {
   "api.version":"v1",
   "sources":[{
-    "name":"<%= environment %>.os.audit",
+    "name":"<%= @environment %>.os.audit",
     "category":"linux_logs",
-    "hostName":"<%= fqdn %>",
+    "hostName":"<%= @fqdn %>",
     "automaticDateParsing":true,
     "multilineProcessingEnabled":false,
     "useAutolineMatching":false,
@@ -14,9 +14,9 @@
     "pathExpression":"/var/log/audit/*.log*",
     "sourceType":"LocalFile"
   },{
-    "name":"<%= environment %>.os.secure",
+    "name":"<%= @environment %>.os.secure",
     "category":"linux_logs",
-    "hostName":"<%= fqdn %>",
+    "hostName":"<%= @fqdn %>",
     "automaticDateParsing":true,
     "multilineProcessingEnabled":false,
     "useAutolineMatching":false,
@@ -27,9 +27,9 @@
     "pathExpression":"/var/log/secure*",
     "sourceType":"LocalFile"
   },{
-    "name":"<%= environment %>.os.msgs",
+    "name":"<%= @environment %>.os.msgs",
     "category":"linux_logs",
-    "hostName":"<%= fqdn %>",
+    "hostName":"<%= @fqdn %>",
     "automaticDateParsing":true,
     "multilineProcessingEnabled":false,
     "useAutolineMatching":true,
@@ -40,9 +40,9 @@
     "pathExpression":"/var/log/messages*",
     "sourceType":"LocalFile"
   },{
-    "name":"<%= environment %>.app.mongo",
+    "name":"<%= @environment %>.app.mongo",
     "category":"linux_logs",
-    "hostName":"<%= fqdn %>",
+    "hostName":"<%= @fqdn %>",
     "automaticDateParsing":true,
     "multilineProcessingEnabled":false,
     "useAutolineMatching":false,

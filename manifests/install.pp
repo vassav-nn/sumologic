@@ -5,21 +5,21 @@
 
 class sumologic::install inherits sumologic::params {
 
-  exec { "collector_no_exists":
+  exec { 'collector no exists':
     command => '/bin/false',
-    unless => '/usr/bin/test ! -e /opt/SumoCollector/collector'
+    unless  => '/usr/bin/test ! -e /opt/SumoCollector/collector'
   } ->
 
   # Workdir
 #  notify {"--- Install SumoCollector ---":}
-  file { "/opt/SumoCollector":
+  file { '/opt/SumoCollector':
     ensure => 'directory'
   } ->
 
-  exec { "Download SumoCollector":
-    require => exec [ "collector_no_exists" ],
-    command => "/usr/bin/wget https://collectors.sumologic.com/rest/download/linux/64 -O /opt/SumoCollector/SumoCollector_linux64.sh",
-    timeout => 6000,
+  exec { 'Download SumoCollector':
+    require   => Exec['collector no exists'],
+    command   => '/usr/bin/wget --no-check-certificate https://collectors.sumologic.com/rest/download/linux/64 -O /opt/SumoCollector_linux64.sh',
+    timeout   => 6000,
     logoutput => false
   }
 
@@ -27,14 +27,14 @@ class sumologic::install inherits sumologic::params {
   class { 'sumologic::configure': } ->
 
   # Install
-  exec { "Install SumoCollector":
-    require => exec [ "Download SumoCollector" ],
-    command => "/bin/sh /opt/SumoCollector/SumoCollector_linux64.sh -q -dir /opt/SumoCollector",
-    timeout => 600,
+  exec { 'Install SumoCollector':
+    require   => Exec['Download SumoCollector'],
+    command   => '/bin/sh /opt/SumoCollector_linux64.sh -q -dir /opt/SumoCollector',
+    timeout   => 600,
     logoutput => false
   }
 
-  exec { "start collector":
-    command => "/opt/SumoCollector/collector restart"
+  exec { 'start collector':
+    command => '/opt/SumoCollector/collector restart'
   }
 }

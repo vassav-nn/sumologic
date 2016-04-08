@@ -1,0 +1,18 @@
+{
+  "templates/sumo.conf.erb": "6500b9f0cb7fe36e4d9c93c01ce987ab",
+  "manifests/restart.pp": "2fd9c27dae4d8d9a474ab0af8a53baac",
+  "Rakefile": "20b80e526e351a74df2001f504e756d2",
+  "metadata.json": "959f3ebd7983853d2f727efbfb7af115",
+  "manifests/config.pp": "f992c000646310ddbc778c1eef4bc7fd",
+  "Gemfile": "dbc1a15e3a264c03878028240cfc5d89",
+  "templates/http.json.erb": "79bf7f458afe3cf48a51f2d9a18c637b",
+  "manifests/params.pp": "5a3159a795fa57354014c7ac2f3aaae0",
+  "templates/atlassian.json.erb": "cd975f092446fdf570483bf117718078",
+  "templates/mongo.json.erb": "9d574a02a6815b1dae6aecf0e879d58a",
+  "README.md": "d79f236af0edc96e42f5ab379f241948",
+  "templates/sumo.json.erb": "79bf7f458afe3cf48a51f2d9a18c637b",
+  "CHANGELOG.md": "74d13dd29b4b9e4749dd60b49c1e2ab1",
+  "manifests/init.pp": "114f02ec8f3aaf4fcc3338858824e512",
+  "manifests/install.pp": "5d6765fc131ea5d70626deb5831b079e",
+  "manifests/configure.pp": "67b541801e3352eac67fcebabde6c000"
+}
